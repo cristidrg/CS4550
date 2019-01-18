@@ -1,0 +1,15 @@
+.calculator {
+  display: flex;
+  flex-wrap: wrap;
+  width: 500px;
+}
+
+.result {
+  flex: 100%;
+  text-align: center;
+}
+
+.calculator > button {
+  flex: 1 0 15%;
+  margin: 25px;
+}

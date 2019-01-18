@@ -1,0 +1,77 @@
+<html>
+  <head>
+    <style>
+      .picture {
+        height: 300px;
+      }
+
+      .learn-container {
+        margin-bottom: 10px;
+      }
+
+      .power-table {
+        border-collapse: collapse;
+      }
+
+      .power-table td, .power-table th{
+        border: 1px solid #000;
+        padding: 0.5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="learn-container">
+      <a href="https://www.w3schools.com/html/default.asp" target="_blank">Learn HTML</a>
+      <a href="https://www.w3schools.com/css/default.asp" target="_blank">Learn HTML</a>
+    </div>
+    
+    <div>
+      <img class="picture" src="./bison.jpg">
+      <h1 class="colored">European Bison</h1>
+      <a href="https://en.wikipedia.org/wiki/European_bison" target="_blank">wikipedia article</a>
+    </div>
+
+    <table class="power-table">
+      <tr>
+        <th>x</th>
+        <td>1</td>
+        <td>2</td>
+        <td>3</td>
+        <td>4</td>
+        <td>5</td>
+        <td>6</td>
+        <td>7</td>
+        <td>8</td>
+      </tr>
+      <tr>
+        <th>2<sup>x</sup></th>
+        <td>2</td>
+        <td>4</td>
+        <td>8</td>
+        <td>16</td>
+        <td>32</td>
+        <td>64</td>
+        <td>128</td>
+        <td>256</td>
+      </tr>
+    </table>
+  </body>
+  <script>
+    document.addEventListener("DOMContentLoaded", function(event) { 
+
+      // Rather than just manually wrapping each 
+      // letter in a span with a class name, we can leverage js for a more reusable approach.
+
+      // Here is how to make a random hex color with js: https://www.paulirish.com/2009/random-hex-color-code-snippets/
+
+      document.querySelectorAll('.colored').forEach(element => {
+        const newContent = element.innerText.split('').map(character => {
+          const hexColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+          return `<span style="color: ${hexColor}">${character}</span>`}
+        ).join('');
+
+        element.innerHTML = newContent;
+      })
+    });
+  </script>
+</html>
